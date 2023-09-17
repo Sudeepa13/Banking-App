@@ -42,14 +42,12 @@ stage('Docker image push') {
             }
         }
 
-        stage('Deploy on server'){
+/*        stage('Deploy on server'){
           steps{
         ansiblePlaybook credentialsId: 'ubuntu-ssh', disableHostKeyChecking: true, installation: 'ansible', playbook: 'deploy.yml'
-          }
-        
-          
-        }
-    
+          }    
+       }
+    */
   
     }
 }
