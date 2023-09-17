@@ -7,7 +7,7 @@ pipeline{
   stages{
     stage('checkout git'){
       steps{
-          git branch: 'main', url: 'https://github.com/shashikrpet/Insurance.git'
+          git branch: 'main', url: 'https://github.com/shashikrpet/banking-project.git'
       }
     }
 
@@ -21,14 +21,14 @@ pipeline{
     stage ('HTML report')
     {
       steps{
-publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/Insurance/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '/var/lib/jenkins/workspace/banking-project/target/surefire-reports', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
       }
     }
 
     stage('docker file and image')
           {
             steps{
-                 sh 'docker build -t shashikrpet/insure-app:2.0 .'
+                 sh 'docker build -t shashikrpet/banking-app:1.0 .'
             }
           }
     
@@ -37,7 +37,7 @@ stage('Docker image push') {
     withCredentials([usernamePassword(credentialsId: 'dockerlog', passwordVariable: 'docker_pwd', usernameVariable: 'docker_usr')]) {
           sh ' docker login -u ${docker_usr} -p ${docker_pwd}'
         }
-      sh 'docker push shashikrpet/insure-app:2.0'
+      sh 'docker push shashikrpet/banking-app:1.0'
       
             }
         }
