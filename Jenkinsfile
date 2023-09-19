@@ -15,7 +15,7 @@ pipeline{
           git branch: 'main', url: 'https://github.com/shashikrpet/banking-project.git'
       }
     }
-
+/*
     stage ('maveen package')
     {
       steps{
@@ -46,7 +46,7 @@ stage('Docker image push') {
       
             }
         }
-
+*?
     stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
             steps {
                 dir('my-serverfiles'){
