@@ -51,7 +51,7 @@ stage('Docker image push') {
             steps {
                 dir('my-serverfiles'){
                 sh 'sudo chmod 600 Awskeypair.pem'
-                sh 'sudo snap install terraform'
+                sh 'sudo apt-get install terraform'
                 sh 'terraform init'
                 sh 'terraform validate'
                 sh 'terraform apply --auto-approve'
