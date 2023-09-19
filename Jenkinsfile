@@ -51,6 +51,7 @@ stage('Docker image push') {
             steps {
                 dir('my-serverfiles'){
                 sh 'sudo chmod 600 Awskeypair.pem'
+                sh 'sudo apt install terraform'
                 sh 'terraform init'
                 sh 'terraform validate'
                 sh 'terraform apply --auto-approve'
