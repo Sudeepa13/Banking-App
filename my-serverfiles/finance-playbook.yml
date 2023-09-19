@@ -9,7 +9,7 @@
   - name : Install Docker
     command : sudo apt install docker.io -y
 
-  - name : Install Docker
+  - name : Install Terraform
     command : sudo apt install terraform -y
 
   - name : Start Docker Service
