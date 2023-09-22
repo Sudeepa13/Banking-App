@@ -1,7 +1,7 @@
 pipeline{
   agent any
   tools{
-   maven 'MAVEN_HOME'
+   maven 'M2_HOME'
   }
    
   environment {
@@ -15,7 +15,7 @@ pipeline{
           git branch: 'main', url: 'https://github.com/Sudeepa13/Banking-App.git'
       }
     }
-    stage ('maveen package')
+    stage ('maven package')
     {
       steps{
       sh 'mvn clean package'
