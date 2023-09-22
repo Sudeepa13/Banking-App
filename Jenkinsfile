@@ -12,10 +12,9 @@ pipeline{
   stages{
     stage('checkout git'){
       steps{
-          git branch: 'main', url: 'https://github.com/shashikrpet/banking-project.git'
+          git branch: 'main', url: 'https://github.com/Sudeepa13/Banking-App.git'
       }
     }
-/*
     stage ('maveen package')
     {
       steps{
@@ -33,21 +32,21 @@ publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, 
     stage('docker file and image')
           {
             steps{
-                 sh 'docker build -t shashikrpet/banking-app:1.0 .'
+                 sh 'docker build -t sudeedockeracc/banking-app:1.0 .'
             }
           }
     
 stage('Docker image push') {
     steps {
-    withCredentials([usernamePassword(credentialsId: 'dockerlog', passwordVariable: 'docker_pwd', usernameVariable: 'docker_usr')]) {
-          sh ' docker login -u ${docker_usr} -p ${docker_pwd}'
+  withCredentials([usernamePassword(credentialsId: 'docid', passwordVariable: 'dockerpwd', usernameVariable: 'dockerusr')]) {
+          sh ' docker login -u ${dockerusr} -p ${dockerpwd}'
         }
-      sh 'docker push shashikrpet/banking-app:1.0'
+      sh 'docker push sudeedockeracc/banking-app:1.0'
       
             }
         }
-*/
-    stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
+
+   */ stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
             steps {
                 dir('my-serverfiles'){
                 sh 'sudo chmod 600 Awskeypair.pem'
@@ -57,7 +56,7 @@ stage('Docker image push') {
                 sh 'terraform apply --auto-approve'
                 }
             }
-        }
+        } */
 
      
     }
