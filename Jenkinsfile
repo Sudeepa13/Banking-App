@@ -46,17 +46,16 @@ stage('Docker image push') {
             }
         }
 
-   /* stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
+    stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
             steps {
                 dir('my-serverfiles'){
                 sh 'sudo chmod 600 Awskeypair.pem'
-                sh 'sudo apt-get install terraform'
                 sh 'terraform init'
                 sh 'terraform validate'
                 sh 'terraform apply --auto-approve'
                 }
             }
-        } */
+        } 
 
      
     }
