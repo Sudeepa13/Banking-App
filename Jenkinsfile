@@ -15,7 +15,7 @@ pipeline{
           git branch: 'main', url: 'https://github.com/Sudeepa13/Banking-App.git'
       }
     }
-    stage ('maven package')
+   /* stage ('maven package')
     {
       steps{
       sh 'mvn clean package'
@@ -44,7 +44,7 @@ stage('Docker image push') {
       sh 'docker push sudeedockeracc/banking-app:1.0'
       
             }
-        }
+        } */
 
     stage ('Configure Test-server with Terraform, Ansible and then Deploying'){
             steps {
