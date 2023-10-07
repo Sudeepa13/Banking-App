@@ -15,7 +15,7 @@ pipeline{
           git branch: 'main', url: 'https://github.com/Sudeepa13/Banking-App.git'
       }
     }
-    stage ('maven package')
+   /* stage ('maven package')
     {
       steps{
       sh 'mvn clean package'
@@ -58,8 +58,8 @@ stage('Docker image push') {
         } 
 
      
-    }
-}
+    } 
+} */
 
 
     
